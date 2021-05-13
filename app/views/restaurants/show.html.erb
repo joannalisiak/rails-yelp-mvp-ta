@@ -10,3 +10,10 @@
 <hr>
 
 <h4>Reviews</h4>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <%= review %>
+    </li>
+  <% end %>
+</ul>
