@@ -1,0 +1,6 @@
+<% @restaurants.each do |restaurant| %>
+  <div class="card">
+    <h2><%= restaurant.name %></h2>
+    <p>Come and have a taste of some delicious <%= restaurant.category.capitalize %> cuisine</p>
+  </div>
+<% end %>
