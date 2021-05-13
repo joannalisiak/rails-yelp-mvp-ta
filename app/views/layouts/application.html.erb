@@ -12,14 +12,9 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
-      <%= link_to "YELP", restaurants_path, class: "navbar-brand" %>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <%= link_to "Add Restaurant", new_restaurant_path, class: "nav-link" %>
-        </li>
-      </ul>
+    <nav>
+      <%= link_to "YELP", restaurants_path, class: "brand" %>
+      <%= link_to "Add Restaurant", new_restaurant_path %>
     </nav>
 
     <div class="container">
