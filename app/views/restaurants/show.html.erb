@@ -1,4 +1,8 @@
-<h1><%= @restaurant.name %></h1>
+<%= link_to restaurants_path do %>
+  <i class="fas fa-undo-alt"></i> Back to all restaurants
+<% end %>
+
+<h1 class="mt-2"><%= @restaurant.name %></h1>
 <h4 class="text-gray">We are serving delicious <%= @restaurant.category.capitalize %> cuisine all year long</h4>
 
 <hr>
@@ -9,17 +13,28 @@
 
 <hr>
 
-<h4>Reviews</h4>
-<ul>
-  <% @restaurant.reviews.each do |review| %>
-    <li>
-      <p>Rating <%= review.rating %></p>
-      <p><%= review.content %></p>
-    </li>
-  <% end %>
-</ul>
-
-<hr>
+<% unless @restaurant.reviews.empty? %>
+  <h4>Reviews</h4>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <div class="text-blue">
+          <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+        </div>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul >
+  <hr>
+<% end %>
 
 <%= simple_form_for [ @restaurant, @review ] do |f| %>
   <%= f.input :rating, collection: 0..5 %>
