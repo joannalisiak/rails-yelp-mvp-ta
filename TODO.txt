@@ -1,2 +1,0 @@
-1. Navbar has issues with margin/padding
-2. Make the whole restaurant card clickable and override a tag properties

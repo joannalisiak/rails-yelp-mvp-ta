@@ -1,8 +1,8 @@
 <% @restaurants.each do |restaurant| %>
-  <%= link_to restaurant_path(restaurant) do %>
-    <div class="card">
-      <h2><%= restaurant.name %></h2>
-      <p>Come and have a taste of some delicious <%= restaurant.category.capitalize %> cuisine</p>
-    </div>
-  <% end %>
+  <div class="card">
+    <%= link_to restaurant_path(restaurant) do %>
+        <h2><%= restaurant.name %></h2>
+        <p>Come and have a taste of some delicious <%= restaurant.category.capitalize %> cuisine</p>
+    <% end %>
+  </div>
 <% end %>
